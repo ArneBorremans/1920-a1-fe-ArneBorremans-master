@@ -1,0 +1,90 @@
+<!--<div *ngIf="(players$ | async) as players; else loadingOrError">-->
+  <div fxLayout="column"
+       fxLayout.xs="column"
+       fxLayoutGap="0.5%"
+       fxLayoutAlign="start">
+    <mat-form-field>
+      <input matInput (keyup)='filterName$.next($event.target.value)'
+             type='text'
+             placeholder='filter name...'
+             #filter
+             data-cy="filterInput">
+    </mat-form-field>
+    <div *ngIf="playersOrTribes is true; then renderPlayers else renderTribes"></div>
+    <ng-template #renderPlayers id="playerOverview">
+      <a mat-button class="overviewButton" disabled id="playerOverviewHeader">
+        <ul>
+          <li class="rank">Rank</li>
+          <li class="name">Name</li>
+          <li class="points">Points</li>
+          <li class="villages">Villages</li>
+        </ul>
+      </a>
+      <div class="player"
+           *ngFor="let localPlayer of (players$ | async | nameFilter: filterName | displayPagePipe: currentPage)"
+           fxFlex="0 0 calc(25%-0.5%)"
+           fxFlex.xs="100%">
+        <a mat-button
+           [ngClass]="['overviewButton', 'rank' + localPlayer.rank]"
+           [routerLink]="['/playerDetails' , currentWorld, localPlayer.player_Id]"
+           routerLinkActive="active"><app-player data-cy="playerCard" [player]="localPlayer"></app-player></a>
+
+        <!--<button (click)="showDetailScreen=false;setCurrentPlayer(localPlayer)" class="overviewButton"><app-player data-cy="playerCard" [player]="localPlayer"></app-player></button>-->
+      </div>
+    </ng-template>
+    <ng-template #renderTribes>
+      <a mat-button class="overviewButton" disabled id="tribeOverviewHeader">
+        <ul>
+          <li class="rank">Rank</li>
+          <li class="name">Name</li>
+          <li class="points">Points</li>
+          <li class="members">Members</li>
+          <li class="villages">Villages</li>
+        </ul>
+      </a>
+      <div class="tribe"
+           *ngFor="let localTribe of (tribes$ | async | nameFilter: filterName | displayPagePipe: currentPage)"
+           fxFlex="0 0 calc(25%-0.5%)"
+           fxFlex.xs="100%">
+
+        <a mat-button
+           [ngClass]="['overviewButton', 'rank' + localTribe.rank]"
+           [routerLink]="['/tribeDetails' , currentWorld, localTribe.tribe_Id]"
+           routerLinkActive="active"><app-tribe data-cy="playerCard" [tribe]="localTribe"></app-tribe></a>
+      </div>
+    </ng-template>
+    <!--<div *ngIf="showDetailScreen" class="detailScreen">
+      <div *ngIf="playersOrTribes is true; then renderDetailPlayers else renderDetailTribes"></div>
+      <ng-template #renderDetailPlayers>
+        <mat-card>
+          <app-player-detail-page [player]="currentPlayer" [world]="world"></app-player-detail-page>
+        </mat-card>
+      </ng-template>
+      <ng-template #renderDetailTribes>
+        <mat-card>
+          <app-tribe-detail-page [tribe]="currentTribe" [world]="world"></app-tribe-detail-page>
+        </mat-card>
+      </ng-template>
+    </div>
+  </div>-->
+    <div *ngIf="currentPage > -1">
+     <div *ngIf="currentPage > 1; then renderBoth else renderNext"></div>
+     <ng-template #renderBoth>
+       <button (click)="pageSelector(-1)" mat-stroked-button>Previous</button>
+       <button (click)="pageSelector(1)" value="1" mat-stroked-button>Next</button>
+     </ng-template>
+     <ng-template #renderNext>
+       <button id="next" (click)="pageSelector(1)" value="1" mat-stroked-button>Next</button>
+     </ng-template>
+   </div>
+    <!--ONTWIKKEL ERROR HANDLING -->
+    <!--</div>
+    <ng-template #loadingOrError>
+    <mat-card class="error" *ngIf="errorMessage; else loading">
+      Error loading the player list: {{ errorMessage }}. <br />
+      Please try again later.
+      <ng-template #loading>
+        <mat-spinner></mat-spinner>
+      </ng-template>
+    </mat-card>
+  </ng-template>-->

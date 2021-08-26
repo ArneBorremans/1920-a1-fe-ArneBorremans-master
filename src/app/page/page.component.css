@@ -1,0 +1,13 @@
+.fullBg {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+mat-card {
+  background: rgba(255,255,255,0.8);
+  font-weight: bold;
+  margin-left: 5%;
+  margin-right: 5%;
+}

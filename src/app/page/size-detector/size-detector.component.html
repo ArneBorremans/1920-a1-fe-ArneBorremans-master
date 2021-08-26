@@ -1,0 +1,8 @@
+<!--
+  Visible only on xs: .d-block .d-sm-none
+  Visible only on sm: .d-none .d-sm-block .d-md-none
+  Visible only on md: .d-none .d-md-block .d-lg-none
+  Visible only on lg: .d-none .d-lg-block .d-xl-none
+  Visible only on xl: .d-none .d-xl-block
+-->
+<div *ngFor="let s of sizes" class="{{s.css + ' ' + (prefix + s.id) }}">{{s.name}}</div>

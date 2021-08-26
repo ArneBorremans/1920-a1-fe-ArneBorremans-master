@@ -1,0 +1,30 @@
+<div fxLayout="column"
+     fxLayout.xs="column"
+     fxLayoutGap="0.5%"
+     fxLayoutAlign="start">
+  <p>Start Date:</p>
+  <mat-form-field>
+    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a start date" [formControl]="startDateControl"
+           [min]="minDate" [max]="maxDate" [disabled]="false" (dateChange)="setStartDate($event.target.value)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <ngx-mat-datetime-picker [(ngModel)]="startDate"
+                             #picker [showSpinners]="true" [showSeconds]="true"
+                             [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
+                             [color]="undefined" [enableMeridian]="false"
+                             [disableMinute]="false" [hideTime]="false"
+                             >
+    </ngx-mat-datetime-picker>
+  </mat-form-field>
+  <p>End Date:</p>
+  <mat-form-field>
+    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose an end date" [formControl]="endDateControl"
+           [min]="minDate" [max]="maxDate" [disabled]="false" (dateChange)="setEndDate($event.target.value)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <ngx-mat-datetime-picker [(ngModel)]="endDate"
+                             #picker [showSpinners]="true" [showSeconds]="true"
+                             [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
+                             [color]="undefined" [enableMeridian]="false"
+                             [disableMinute]="false" [hideTime]="false">
+    </ngx-mat-datetime-picker>
+  </mat-form-field>
+</div>

@@ -1,0 +1,33 @@
+.button {
+  width: 95%;
+  height: 40px;
+  display: inline-block;
+  color: aliceblue;
+  background-color: saddlebrown;
+  margin: 1.5% 5% 0 5%;
+  overflow: hidden;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.button:hover {
+  color: saddlebrown;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  width: 30%;
+}
+
+ul{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+p{
+    font-size: 2em;
+    margin-left: .5em;
+    color: black;
+}

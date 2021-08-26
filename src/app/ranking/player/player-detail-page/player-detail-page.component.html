@@ -1,0 +1,117 @@
+<div *ngIf="isDataAvailable == false || playerOD == null || player == null || tribe == null" class="loading-status">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="isDataAvailable && playerOD != null && player != null && tribe != null"
+     fxLayout="column"
+       fxLayout.xs="column"
+       fxLayoutGap="0.5%"
+       fxLayoutAlign="start">
+  <img *ngIf="player.rank <= 3 && player.rank >= 1" class="crown" src="assets/Fotos/CrownRank{{player.rank}}.png"/>
+  <table>
+    <tbody [className]="'rank' + player.rank">
+      <tr >
+        <td>
+          Rank:
+        </td>
+        <td>
+          {{player.rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Name:
+        </td>
+        <td>
+          {{player.name}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Tribe:
+        </td>
+        <td>
+          <a class="regularLink"
+             [routerLink]="['/tribeDetails' , currentWorld, player.tribe_Id]"
+             routerLinkActive="active">{{tribe.name}}</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Points:
+        </td>
+        <td>
+          {{player.points | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Villages:
+        </td>
+        <td>
+          {{player.villageCount}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Avg points/village:
+        </td>
+        <td>
+          {{avgVillaPoints() | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          OD Rank:
+        </td>
+        <td>
+          {{playerOD.oD_Rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Opponents Defeated:
+        </td>
+        <td>
+          {{playerOD.od | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ODA Rank:
+        </td>
+        <td>
+          {{playerOD.odA_Rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Opponents Defeated As Attacker:
+        </td>
+        <td>
+          {{playerOD.oda | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ODD Rank:
+        </td>
+        <td>
+          {{playerOD.odD_Rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Opponents Defeated As Defender:
+        </td>
+        <td>
+          {{playerOD.odd | pointpipe}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a mat-button
+     class="backButton"
+     [routerLink]="['/players' , currentWorld]"
+     routerLinkActive="active">&#8249; Go back to player ranking W{{currentWorld}}</a>
+</div>
+

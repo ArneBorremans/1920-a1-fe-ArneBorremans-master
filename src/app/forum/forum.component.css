@@ -1,0 +1,46 @@
+mat-form-field{
+    display: block;
+}
+
+button{
+    background-color: saddlebrown;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: aliceblue;
+    color: saddlebrown;
+}
+
+textarea{
+    height: 10%;
+}
+
+mat-form-field::ng-deep.mat-form-field-underline {
+  background-color: green !important;
+}
+
+mat-form-field::ng-deep.mat-focused, mat-form-field::ng-deep.mat-form-field-label {
+  color: green !important;
+}
+
+mat-form-field::ng-deep.mat-form-field-ripple {
+  background-color: green !important;
+}
+
+#delete:hover{
+    background-color: red;
+    color: aliceblue;
+}
+
+#delete{
+    float: right;
+    z-index: 10;
+}
+
+mat-card{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: darkolivegreen;
+}

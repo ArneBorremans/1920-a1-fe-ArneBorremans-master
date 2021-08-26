@@ -1,0 +1,71 @@
+<body>
+  <mat-toolbar>
+    <h1><span class="light">TribalWars</span>Hub</h1>
+    <span class="spacer"></span>
+    <div id="buttons">
+      <select *ngIf="getPath() == 'players' || getPath() == 'tribes' || getPath() == 'maps'"
+              id="dropDownWorlds" class="form-control" [(ngModel)]="currentWorld" (change)="changeWorld($event.target.value)">
+        <option disabled hidden selected ng-disabled>W{{currentWorld}}</option>
+        <option value="107">W107</option>
+        <option value="110">W110</option>
+        <option value="111">W111</option>
+        <option value="112">W112</option>
+        <option value="113">W113</option>
+        <option value="114">W114</option>
+      </select>
+
+      <span *ngIf="loggedInUser$ | async as user; else login">
+        <span id="name">{{ user }}</span>
+        <button mat-button id="logoutButton" (click)="logout()">
+          LOG OUT
+        </button>
+      </span>
+      <ng-template #login>
+        <a mat-button
+           class="{{getPath() == 'login' ? 'activeLink' : ''}}"
+           [routerLink]="['login']"
+           routerLinkActive="active">LOG IN</a>
+      </ng-template>
+      <a mat-button
+         class="{{getPath() == 'home' ? 'activeLink' : ''}}"
+         [routerLink]="['home']"
+         routerLinkActive="active">HOME</a>
+      <a mat-button
+         class="{{getPath() == 'players' || getPath() == 'playerDetails' ? 'activeLink' : ''}}"
+         [routerLink]="['/players' , currentWorld]"
+         routerLinkActive="active">PLAYERS</a>
+      <a mat-button
+         class="{{getPath() == 'tribes' || getPath() == 'tribeDetails' ? 'activeLink' : ''}}"
+         [routerLink]="['/tribes' , currentWorld]"
+         routerLinkActive="active">TRIBES</a>
+      <a mat-button
+         class="{{getPath() == 'maps' ? 'activeLink' : ''}}"
+         [routerLink]="['/maps' , currentWorld]"
+         routerLinkActive="active">MAPS</a>
+      <a mat-button
+         class="{{getPath() == 'tools' ? 'activeLink' : ''}}"
+         [routerLink]="['/tools' , currentWorld]"
+         routerLinkActive="active">TOOLS</a>
+      <a mat-button
+         class="{{getPath() == 'forum' ? 'activeLink' : ''}}"
+         [routerLink]="['forum']"
+         routerLinkActive="active">FORUM</a>
+      <a mat-button
+         class="{{getPath() == 'contact' ? 'activeLink' : ''}}"
+         [routerLink]="['contact']"
+         routerLinkActive="active">CONTACT</a>
+    </div>
+    <select id="dropDownMenu">
+      <option value="" selected="selected">Select</option>
+      <option value="/login">Login</option>
+      <option value="/">Home</option>
+      <option value="/players">Players</option>
+      <option value="/tribes">Tribes</option>
+      <option value="/maps">Maps</option>
+      <option value="/contact">Contact</option>
+    </select>
+  </mat-toolbar>
+  <mat-card id="backdrop">
+    <router-outlet></router-outlet>
+  </mat-card>
+</body>

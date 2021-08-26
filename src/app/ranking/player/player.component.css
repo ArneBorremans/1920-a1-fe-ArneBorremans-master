@@ -1,0 +1,31 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 40px;
+}
+
+li {
+  display: inline-block;
+  padding: 0px;
+  text-decoration: none;
+  text-wrap: avoid;
+  overflow: hidden;
+}
+
+.rank {
+  width: 40px;
+}
+
+.name {
+  width: 200px;
+}
+
+.points {
+  width: 120px;
+}
+
+.villages {
+  width: 80px;
+}

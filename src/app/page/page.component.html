@@ -1,0 +1,23 @@
+<img class="fullBg" fullpage [src]="page.image" />
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h1>{{page.title}}</h1></mat-card-title>
+    <mat-card-subtitle>{{page.subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div [ngSwitch]="page.title">
+      <p *ngSwitchCase="'Players'"><app-ranking [_playersOrTribes]="true"></app-ranking></p>
+      <p *ngSwitchCase="'PlayerDetails'"><app-player-detail-page></app-player-detail-page></p>
+      <p *ngSwitchCase="'Tribes'"><app-ranking [_playersOrTribes]="false"></app-ranking></p>
+      <p *ngSwitchCase="'TribeDetails'"><app-tribe-detail-page></app-tribe-detail-page></p>
+      <p *ngSwitchCase="'Maps'"><app-map></app-map></p>
+      <p *ngSwitchCase="'Tools'"><app-tool></app-tool></p>
+      <p *ngSwitchCase="'Forum'"><app-forum></app-forum></p>
+      <p *ngSwitchCase="'Register'"><app-register></app-register></p>
+      <p *ngSwitchCase="'Login'"><app-login></app-login></p>
+      <p *ngSwitchCase="'Contact'"></p>
+      <p *ngSwitchDefault><app-home></app-home></p>
+    </div>
+  </mat-card-content>
+</mat-card>

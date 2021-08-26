@@ -1,0 +1,111 @@
+table {
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  color: saddlebrown;
+  border-collapse: collapse;
+  display: table;
+  font-size: 1.5em;
+  border: black solid 2px;
+  color: saddlebrown;
+}
+
+td {
+  width: auto;
+  padding: 5px;
+  height: 2em;
+}
+
+  td:nth-child(odd) {
+    border-right: black solid 2px;
+    background-color: saddlebrown;
+    color: aliceblue;
+    font-weight: bold;
+    border-bottom: solid black 1px;
+  }
+
+  td:nth-child(even) {
+    background-color: aliceblue;
+    border-bottom: solid black 1px;
+    border-top: none;
+  }
+
+th{
+    border: solid saddlebrown 3px;
+    margin: 0px;
+}
+
+td {
+  border: solid saddlebrown 1px;
+  text-align: left;
+}
+
+.loading-status ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: forestgreen;
+}
+
+.loading-status {
+  margin: 0 45%;
+}
+
+.backButton{
+  height: 40px;
+  display: inline-block;
+  color: aliceblue;
+  background-color: saddlebrown;
+  margin-right: 10px;
+  width: 40%;
+  margin: 1.5% 5% 0 5%;
+  text-decoration: none;
+  float: left;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px black solid;
+}
+
+ .backButton:hover, button:hover {
+    color: saddlebrown;
+    background-color: aliceblue;
+    cursor: pointer;
+  }
+
+
+.backButton {
+  width: auto;
+  margin: 1% auto;
+}
+
+.backButton:after {
+  position: absolute; /* Prevent underline of arrow */
+  padding-left: 2px; /* Add a little space between text and arrow */
+}
+
+.regularLink, .regularLink:visited{
+    text-decoration: none;
+    color: saddlebrown;
+}
+
+.regularLink:hover{
+    color: forestgreen;
+}
+
+.rank1 tr td:nth-child(odd) {
+  background-color: #FFD700;
+  color: black;
+}
+
+.rank2 tr td:nth-child(odd) {
+  background-color: silver;
+  color: black;
+}
+
+.rank3 tr td:nth-child(odd) {
+  background-color: #cd7f32;
+  color: black;
+}
+
+.crown {
+  width: 10%;
+  margin: 0 auto;
+}
+

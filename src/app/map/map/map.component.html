@@ -1,0 +1,24 @@
+
+
+<mat-card>
+  <mat-card-content>
+    <div *ngIf="loading" class="loading-status">
+      <mat-spinner></mat-spinner>
+    </div>
+    <ul *ngIf="loaded">
+      <li *ngFor="let map of images; let i = index">
+        <mat-expansion-panel class="panel">
+          <mat-expansion-panel-header class="header">
+            <p class="title">{{mapnames[i]}}</p>
+          </mat-expansion-panel-header>
+          <div class="opened">
+            <img src="{{map}}" />
+          </div>
+        </mat-expansion-panel>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+
+

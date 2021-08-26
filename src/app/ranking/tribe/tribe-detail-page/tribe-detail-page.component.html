@@ -1,0 +1,114 @@
+<div *ngIf="isDataAvailable == false || tribeOD == null || tribe == null" class="loading-status">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="isDataAvailable && tribeOD != null && tribe != null"
+     fxLayout="column"
+     fxLayout.xs="column"
+     fxLayoutGap="0.5%"
+     fxLayoutAlign="start">
+  <img *ngIf="tribe.rank <= 3 && tribe.rank >= 1" class="crown" src="assets/Fotos/CrownRank{{tribe.rank}}.png" />
+  <table>
+    <tbody [className]="'rank' + tribe.rank">
+      <tr>
+        <td>
+          Rank:
+        </td>
+        <td>
+          {{tribe.rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Name:
+        </td>
+        <td>
+          {{tribe.name}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Members:
+        </td>
+        <td>
+          {{tribe.memberCount}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Points:
+        </td>
+        <td>
+          {{tribe.allPoints | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Villages:
+        </td>
+        <td>
+          {{tribe.villageCount}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Avg points/village:
+        </td>
+        <td>
+          {{avgVillaPoints() | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          OD Rank:
+        </td>
+        <td>
+          {{tribeOD.oD_Rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Opponents Defeated:
+        </td>
+        <td>
+          {{tribeOD.od | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ODA Rank:
+        </td>
+        <td>
+          {{tribeOD.odA_Rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Opponents Defeated As Attacker:
+        </td>
+        <td>
+          {{tribeOD.oda | pointpipe}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ODD Rank:
+        </td>
+        <td>
+          {{tribeOD.odD_Rank}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Opponents Defeated As Defender:
+        </td>
+        <td>
+          {{tribeOD.odd | pointpipe}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a mat-button
+     class="backButton"
+     [routerLink]="['/tribes' , currentWorld]"
+     routerLinkActive="active">&#8249; Go back to tribe ranking W{{currentWorld}}</a>
+</div>

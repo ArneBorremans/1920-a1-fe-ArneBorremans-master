@@ -1,0 +1,146 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+}
+
+li {
+  display: inline-block;
+  padding: 0px;
+  text-decoration: none;
+  height: 40px;
+  vertical-align: middle;
+}
+
+button {
+  width: 40%;
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+  color: aliceblue;
+  background-color: saddlebrown;
+  margin: 1.5% 5% 0 5%;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75) !important;
+}
+
+
+a {
+  height: 40px;
+  color: aliceblue;
+  background-color: saddlebrown;
+  width: 40%;
+  margin: 1.5% 5% 0 5%;
+  text-decoration: none;
+  border: 1px black solid;
+  border-collapse: collapse;
+  vertical-align: middle;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+a:hover, button:hover{
+    color:saddlebrown;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+#loading{
+    color: saddlebrown;
+}
+
+#next {
+  width: 90%;
+}
+
+.rank {
+  width: 40px;
+}
+
+.name {
+  width: 200px;
+}
+
+.points {
+  width: 120px;
+}
+
+.villages {
+  width: 80px;
+}
+
+.members {
+  width: 80px;
+}
+
+
+.overviewButton {
+  width: 90%;
+  margin-top: 0px;
+  margin-bottom: -.5%;
+}
+
+mat-form-field{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#playerOverviewHeader, #tribeOverviewHeader, #playerOverviewHeader:hover, #tribeOverviewHeader:hover {
+  border: solid 2px black;
+  font-weight: bold;
+  cursor: default;
+  color: aliceblue;
+  background-color: saddlebrown;
+}
+
+#playerOverviewHeader ul li{
+    display: inline-block;
+}
+
+
+mat-card {
+  width: 90%;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0px;
+  background-color: aliceblue;
+  border: solid 1px white;
+}
+
+mat-form-field::ng-deep.mat-form-field-underline {
+  background-color: green !important;
+}
+
+mat-form-field::ng-deep.mat-focused, mat-form-field::ng-deep.mat-form-field-label {
+  color: green !important;
+}
+
+mat-form-field::ng-deep.mat-form-field-ripple {
+  background-color: green !important;
+}
+
+.rank1 , .rank2 , .rank3  {
+  color: saddlebrown;
+  color: black;
+}
+
+.rank1 {
+  background-color: #FFD700;
+}
+
+.rank2 {
+  background-color: silver;
+}
+
+.rank3 {
+  background-color: #cd7f32;
+}
+
+#playerOverviewHeader, #tribeOverviewHeader{
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}

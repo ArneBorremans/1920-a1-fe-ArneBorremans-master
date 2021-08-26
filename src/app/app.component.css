@@ -1,0 +1,126 @@
+/* @import '../styles.css';*/
+mat-toolbar {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  height: 60px;
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, .5);
+}
+
+@media (max-width: 1050px){
+    /*h1{
+        visibility: hidden;
+        width: 0px;
+    }*/
+    #buttons{
+        display:none;
+    }
+    #dropDownMenu {
+      display: inline-block;
+      z-index: 2;
+      height: 30px;
+      width: 120px;
+      background-color: saddlebrown;
+      font-weight: bold;
+      color: aliceblue;
+    }
+
+    #name {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+  #backdrop {
+    padding: 0px;
+  }
+}
+
+#dropDownWorlds {
+  display: inline-block;
+  padding: 1.1em;
+  margin-right: 15px;
+  color: white;
+  background-color: saddlebrown;
+  height: 100%;
+  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+}
+
+select {
+  display: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+mat-toolbar-row {
+  justify-content: space-between;
+}
+
+a, #logoutButton {
+  margin-right: 10px;
+  font-weight: bold;
+  color: white;
+  padding: 5px;
+  margin: 2px;
+  background-color: saddlebrown;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+}
+
+  #logoutButton:hover{
+      background-color: red;
+  }
+
+  a.active {
+    background-color: forestgreen;
+  }
+
+a.active:hover{
+    color: forestgreen;
+    background-color:aliceblue;
+}
+
+a:hover {
+    background-color: aliceblue;
+    color: saddlebrown;
+}
+
+h1 {
+  margin: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+h1 .light {
+  font-weight: 100;
+}
+
+mat-card {
+  background: rgba(204, 204, 204, 0);
+  overflow-y: auto;
+}
+
+body{
+    align-content: center;
+}
+
+#name{
+    margin-right: 1%;
+    font-size: 0.8em;
+    color: aliceblue;
+}
+
+#backdrop{
+    box-shadow: none;
+    width: 100%;
+}
+
+.activeLink {
+  background-color: forestgreen;
+}

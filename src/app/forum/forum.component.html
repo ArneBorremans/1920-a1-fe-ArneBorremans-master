@@ -1,0 +1,22 @@
+<div class="container">
+  <form #commentForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <mat-form-field>
+        <input matInput type="text" class="form-control" id="name" required [(ngModel)]="name" name="name" placeholder="Name" minlength="2" maxlength="20">
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <textarea matInput type="text" class="form-control" id="commentText" [(ngModel)]="commentText" name="commentText" required placeholder="Leave a comment!" rows="8" minlength="5"></textarea>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+<div *ngFor="let localComment of (comments$ | async)">
+  <mat-card>
+    <button mat-raised-button id="delete" (click)="onDelete(localComment)">Delete</button>
+    <app-comment id="comment" [comment]="localComment" data-cy="forumCard"></app-comment>
+  </mat-card>
+</div>

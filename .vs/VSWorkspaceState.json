@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\home",
+    "\\src\\app\\material",
+    "\\src\\app\\page",
+    "\\src\\app\\ranking",
+    "\\src\\app\\tool",
+    "\\src\\app\\tool\\Calculators",
+    "\\src\\app\\tool\\Calculators\\datecalculator"
+  ],
+  "SelectedNode": "\\src\\app\\tool\\Calculators\\datecalculator\\datecalculator.component.ts",
+  "PreviewInSolutionExplorer": false
+}

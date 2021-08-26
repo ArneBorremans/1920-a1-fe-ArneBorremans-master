@@ -1,0 +1,80 @@
+.map {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: inline-block;
+}
+
+mat-card {
+  width: 90%;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0px;
+  background-color: aliceblue;
+  border: solid 1px white;
+}
+
+h1{
+    color: saddlebrown;
+}
+
+img {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 0px;
+  border: solid black 1px;
+}
+
+li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+.loading-status ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: forestgreen;
+}
+
+.loading-status {
+  margin: 0 45%;
+}
+/*#007800*/
+.panel {
+  background-color: #006B00;
+  border: solid black 2px;
+  overflow: hidden;
+  margin-bottom: 1px;
+  display: block;
+}
+
+.header {
+  background-color: saddlebrown !important;
+  color: aliceblue;
+  font-size: 1.5em;
+  font-weight: bold;
+  align-content: center;
+  height: 2% !important;
+}
+
+.title {
+  padding: 0;
+  margin: 1% auto
+}
+
+.header:hover {
+  background-color: aliceblue !important;
+  color: saddlebrown;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.opened {
+  background-color: #006B00;
+}
